@@ -1,5 +1,11 @@
 def find_shortest_string_recursive(arr)
-  # type your code in here
+  lengths = arr.map { |str| str.length }
+  min = lengths.min
+
+  return arr[0] if arr[0].length === min
+
+  arr.shift()
+  find_shortest_string_recursive(arr)
 end
 
 if __FILE__ == $PROGRAM_NAME
